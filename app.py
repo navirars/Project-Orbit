@@ -36,8 +36,8 @@ vocab         = None
 
 # [Routing untuk Halaman Utama atau Home]	
 @app.route("/")
-def beranda():
-    return render_template('index.html')
+if request.method == 'GET':
+        return render_template("templates/index.html")
 
 # [Routing untuk API]		
 @app.route("/api/deteksi",methods=['POST'])
